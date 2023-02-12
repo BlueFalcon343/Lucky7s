@@ -49,6 +49,10 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        // rotates the player and camera
+        transform.eulerAngles = new Vector3(0, transform.eulerAngles.y + rotationY, 0);
+        camera.transform.eulerAngles = new Vector3(-rotationX, transform.eulerAngles.y + rotationY, 0);
+
         ToggleItems();
     }
 
@@ -63,6 +67,7 @@ public class PlayerController : MonoBehaviour
     {
         // receives keyboard/joystick input
         Vector2 movementVector = movementValue.Get<Vector2>();
+        Debug.Log(movementVector.x);
 
         // sets the input into variables
         movementX = movementVector.x;
@@ -80,10 +85,6 @@ public class PlayerController : MonoBehaviour
         
         // clamps rotation across the x-axis
         rotationX = Mathf.Clamp(rotationX, minTurnAngle, maxTurnAngle);
-
-        // rotates the player and camera
-        transform.eulerAngles = new Vector3(0, transform.eulerAngles.y + rotationY, 0);
-        camera.transform.eulerAngles = new Vector3(-rotationX, transform.eulerAngles.y + rotationY, 0);
     }  
 
     // toggles the UI collectables
