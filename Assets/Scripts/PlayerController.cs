@@ -67,7 +67,6 @@ public class PlayerController : MonoBehaviour
     {
         // receives keyboard/joystick input
         Vector2 movementVector = movementValue.Get<Vector2>();
-        Debug.Log(movementVector.x);
 
         // sets the input into variables
         movementX = movementVector.x;
@@ -81,11 +80,48 @@ public class PlayerController : MonoBehaviour
 
         // calculates the amount of rotation
         rotationY = rotationVector.x * turnSpeed;
-        rotationX += rotationVector.y * turnSpeed / 2;
+        rotationX += rotationVector.y * turnSpeed;
         
         // clamps rotation across the x-axis
         rotationX = Mathf.Clamp(rotationX, minTurnAngle, maxTurnAngle);
     }  
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        // red gem collectable
+        if (other.gameObject.CompareTag("Red")) // SET TAG
+        {
+            isGemRed = true;
+            Destroy(other.gameObject);
+        }
+        // blue gem collectable
+        if (other.gameObject.CompareTag("Blue")) // SET TAG
+        {
+            isGemBlue = true;
+            Destroy(other.gameObject);
+        }
+        // green gem collectable
+        if (other.gameObject.CompareTag("Green")) // SET TAG
+        {
+            isGemGreen = true;
+            Destroy(other.gameObject);
+        }
+        // ghost sheet collectable
+        if (other.gameObject.CompareTag("Sheet")) // SET TAG
+        {
+            isGhostSheet = true;
+            Destroy(other.gameObject);
+        }
+    }
+
+    void OnCollisionStay2D(Collision2D other)
+    {
+        // enemy contact
+        if (other.gameObject.CompareTag("Guard")) // SET TAG
+        {
+            // SET CONDITION
+        }
+    }
 
     // toggles the UI collectables
     void ToggleItems()
