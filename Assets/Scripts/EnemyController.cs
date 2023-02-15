@@ -28,7 +28,6 @@ public class EnemyController : MonoBehaviour
     {
         player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
-
     }
 
     private void Update()
@@ -70,24 +69,34 @@ public class EnemyController : MonoBehaviour
         agent.SetDestination(player.position);
 
         transform.LookAt(player);
+    }
 
-        if(!alreadyAttacked)
+    private void OnCollisionStay(Collision other)
+    {
+        if (!alreadyAttacked)
         {
             //Attack code here
+            PlayerController player = other.gameObject.GetComponent<PlayerController>();
 
+            if (player != null)
+            {
+                player.ChangeHealth(-1);
+            }
             //End of Attack code
 
+            // Starts break between attacks
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
     }
 
+    // Ends break between attacks
     private void ResetAttack()
     {
         alreadyAttacked = false;
     }
-    
-    //Display sight range for testing
+
+    // Display sight range for testing
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;

@@ -5,6 +5,11 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    // health variables
+    public int maxHealth = 10;
+    public int health { get { return currentHealth; } }
+    int currentHealth;
+
     // input variables
     public float moveSpeed = 1f;
     public float turnSpeed = 1.0f;
@@ -39,7 +44,10 @@ public class PlayerController : MonoBehaviour
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
         musicSource = GetComponent<AudioSource>();
-        
+
+        // sets health
+        currentHealth = maxHealth;
+
         // hides UI collectables
         imageGemRed.SetActive(false);
         imageGemBlue.SetActive(false);
@@ -81,10 +89,10 @@ public class PlayerController : MonoBehaviour
         // calculates the amount of rotation
         rotationY = rotationVector.x * turnSpeed;
         rotationX += rotationVector.y * turnSpeed;
-        
+
         // clamps rotation across the x-axis
         rotationX = Mathf.Clamp(rotationX, minTurnAngle, maxTurnAngle);
-    }  
+    }
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -128,22 +136,29 @@ public class PlayerController : MonoBehaviour
     {
         if (isGemRed == true)
             imageGemRed.SetActive(true);
-        else 
+        else
             imageGemRed.SetActive(false);
 
         if (isGemBlue == true)
             imageGemBlue.SetActive(true);
-        else 
+        else
             imageGemBlue.SetActive(false);
 
         if (isGemGreen == true)
             imageGemGreen.SetActive(true);
-        else 
+        else
             imageGemGreen.SetActive(false);
 
         if (isGhostSheet == true)
             imageGhostSheet.SetActive(true);
-        else 
+        else
             imageGhostSheet.SetActive(false);
+    }
+
+    // controls health changes such as damage and healing
+    public void ChangeHealth(int amount)
+    {
+        currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
+        Debug.Log(currentHealth + "/" + maxHealth);
     }
 }
