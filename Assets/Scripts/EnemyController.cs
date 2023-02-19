@@ -19,6 +19,7 @@ public class EnemyController : MonoBehaviour
     //States
     public float sightRange;
     public bool playerInSightRange;
+    bool playerInvisible;
 
     //Attacking
     public float timeBetweenAttacks;
@@ -28,6 +29,8 @@ public class EnemyController : MonoBehaviour
     {
         player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
+
+        playerInvisible = FindObjectOfType<PlayerController>().isInvisible;
     }
 
     private void Update()
@@ -35,8 +38,11 @@ public class EnemyController : MonoBehaviour
         //Checks for player in sight range
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
 
+        //Checks to see if the player is invisible
+        playerInvisible = FindObjectOfType<PlayerController>().isInvisible;
+
         if (!playerInSightRange) Patroling();
-        if (playerInSightRange) ChasePlayer();
+        if (playerInSightRange && !playerInvisible) ChasePlayer();
     }
 
     private void Patroling()
