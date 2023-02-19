@@ -73,8 +73,6 @@ public class EnemyController : MonoBehaviour
     private void ChasePlayer()
     {
         agent.SetDestination(player.position);
-
-        transform.LookAt(player);
     }
 
     private void OnCollisionStay(Collision other)

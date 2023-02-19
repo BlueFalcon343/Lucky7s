@@ -117,7 +117,7 @@ public class PlayerController : MonoBehaviour
         rotationX = Mathf.Clamp(rotationX, minTurnAngle, maxTurnAngle);
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter(Collider other)
     {
         // red gem collectable
         if (other.gameObject.CompareTag("Red")) // SET TAG
