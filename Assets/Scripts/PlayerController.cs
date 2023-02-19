@@ -36,17 +36,23 @@ public class PlayerController : MonoBehaviour
     public bool isGemGreen = false;
 
     public bool isGhostSheet = false;
+    public bool isInvisible = false;
 
     // audio
     public AudioSource musicSource;
+
+    // timer
+    public float maxCount = 10;
+    float count = 0;
 
     void Start()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
         musicSource = GetComponent<AudioSource>();
 
-        // sets health
+        // sets health & timer
         currentHealth = maxHealth;
+        count = maxCount;
 
         // hides UI collectables
         imageGemRed.SetActive(false);
@@ -62,6 +68,23 @@ public class PlayerController : MonoBehaviour
         camera.transform.eulerAngles = new Vector3(-rotationX, transform.eulerAngles.y + rotationY, 0);
 
         ToggleItems();
+
+        // invisibility timer
+        if (isGhostSheet == true)
+        {
+            if (count > 0)
+            {
+                isGhostSheet = true;
+                isInvisible = true;
+                count -= Time.deltaTime;
+            }
+            else
+            {
+                isGhostSheet = false;
+                isInvisible =  false;
+                count = maxCount;
+            }
+        }
     }
 
     void FixedUpdate()
