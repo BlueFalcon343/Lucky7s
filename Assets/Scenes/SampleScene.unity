@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571336, b: 0.3069219, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3362,7 +3362,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5238b3d1deaad44f29bce3238e7717ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: []
 --- !u!65 &789820457
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4082,7 +4081,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 942732402}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -4164,7 +4163,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5238b3d1deaad44f29bce3238e7717ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: []
 --- !u!1001 &963075739
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6831,7 +6829,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5238b3d1deaad44f29bce3238e7717ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: []
+--- !u!65 &1488253945
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1488253939}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.056709565, y: 0.02364798, z: 0.012475891}
+  m_Center: {x: 0, y: 0, z: 0.000000014901161}
 --- !u!1001 &1493318544
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7643,7 +7653,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5238b3d1deaad44f29bce3238e7717ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: []
 --- !u!4 &1651025726 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: fecb9a346a7d0404cb38b6666ee67109, type: 3}
@@ -9161,7 +9170,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5238b3d1deaad44f29bce3238e7717ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: []
 --- !u!1 &1963055613 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7953629034699853866, guid: ef3d472f77e310f48af0fbe5bfc440d0, type: 3}
@@ -9778,7 +9786,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5238b3d1deaad44f29bce3238e7717ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: []
 --- !u!4 &2109720806 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9e2287cceba71c04c87b53bdc30a1d0c, type: 3}

@@ -4,22 +4,13 @@ using UnityEngine;
 
 public class PickableItem : MonoBehaviour
 {
-   public List<string> inventory;
-
-   void Update()
-   {
-    if(Input.GetMouseButtonDown(0))
+    void OnTriggerEnter(Collider other)
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hitInfo;
-        if(Physics.Raycast(ray,out hitInfo))
+        PlayerController controller = other.GetComponent<PlayerController>();
+
+        if (controller != null)
         {
-            if(hitInfo.collider.gameObject.tag == "Pickable")
-            {
-                inventory.Add(hitInfo.collider.gameObject.name);
-                Destroy(hitInfo.collider.gameObject);
-            }
+            Destroy(gameObject);
         }
     }
-   }
 }
