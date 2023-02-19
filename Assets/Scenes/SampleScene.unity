@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571336, b: 0.3069219, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1213,6 +1213,11 @@ Transform:
   m_Father: {fileID: 331611208}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &362696386 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b0231c483431d1941a5e0c12874c2885, type: 3}
+  m_PrefabInstance: {fileID: 1956101704}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &365817921 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9e2287cceba71c04c87b53bdc30a1d0c, type: 3}
@@ -3317,9 +3322,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 789820455}
+  - component: {fileID: 789820456}
+  - component: {fileID: 789820457}
   m_Layer: 0
   m_Name: Gems
-  m_TagString: Untagged
+  m_TagString: Pickable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3343,6 +3350,32 @@ Transform:
   m_Father: {fileID: 331611208}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &789820456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 789820454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5238b3d1deaad44f29bce3238e7717ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: []
+--- !u!65 &789820457
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 789820454}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &804870215
 GameObject:
   m_ObjectHideFlags: 0
@@ -3802,6 +3835,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: green gems
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d07db6133ed82664888952d70d40f252, type: 3}
+      propertyPath: m_TagString
+      value: Pickable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: d07db6133ed82664888952d70d40f252, type: 3}
@@ -4029,9 +4066,10 @@ GameObject:
   - component: {fileID: 942732405}
   - component: {fileID: 942732404}
   - component: {fileID: 942732403}
+  - component: {fileID: 942732407}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Pickable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4114,6 +4152,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &942732407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942732402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5238b3d1deaad44f29bce3238e7717ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: []
 --- !u!1001 &963075739
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4362,6 +4413,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -3466985687383862344, guid: 0bf1b4eaf325c454aa51238ec2ad2ade, type: 3}
+--- !u!1 &1008748109 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2a35b6561cc7cfd4aa0d9addcc5d4b3e, type: 3}
+  m_PrefabInstance: {fileID: 1645741643}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1049691773 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f70d1fce6ed771c498aea12c2a201e5a, type: 3}
@@ -6758,6 +6814,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 354b981e65b133040a304a5ac1beb1a4, type: 3}
   m_PrefabInstance: {fileID: 1064285542}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1488253939 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d07db6133ed82664888952d70d40f252, type: 3}
+  m_PrefabInstance: {fileID: 882326962}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1488253942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1488253939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5238b3d1deaad44f29bce3238e7717ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: []
 --- !u!1001 &1493318544
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7291,6 +7365,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9e2287cceba71c04c87b53bdc30a1d0c, type: 3}
   m_PrefabInstance: {fileID: 1661082288}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1628641851 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 20a51c90ad399d341bce8c10448cb835, type: 3}
+  m_PrefabInstance: {fileID: 2087336864}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1630738616
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7540,6 +7619,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: red gems
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2a35b6561cc7cfd4aa0d9addcc5d4b3e, type: 3}
+      propertyPath: m_TagString
+      value: Pickable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a35b6561cc7cfd4aa0d9addcc5d4b3e, type: 3}
@@ -7548,6 +7631,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2a35b6561cc7cfd4aa0d9addcc5d4b3e, type: 3}
   m_PrefabInstance: {fileID: 1645741643}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1645741647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008748109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5238b3d1deaad44f29bce3238e7717ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: []
 --- !u!4 &1651025726 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: fecb9a346a7d0404cb38b6666ee67109, type: 3}
@@ -9041,6 +9137,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: gem
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b0231c483431d1941a5e0c12874c2885, type: 3}
+      propertyPath: m_TagString
+      value: Pickable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: b0231c483431d1941a5e0c12874c2885, type: 3}
@@ -9049,6 +9149,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b0231c483431d1941a5e0c12874c2885, type: 3}
   m_PrefabInstance: {fileID: 1956101704}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1956101708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362696386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5238b3d1deaad44f29bce3238e7717ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: []
 --- !u!1 &1963055613 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7953629034699853866, guid: ef3d472f77e310f48af0fbe5bfc440d0, type: 3}
@@ -9641,6 +9754,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 3 gems side by side
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 20a51c90ad399d341bce8c10448cb835, type: 3}
+      propertyPath: m_TagString
+      value: Pickable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 20a51c90ad399d341bce8c10448cb835, type: 3}
@@ -9649,6 +9766,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 20a51c90ad399d341bce8c10448cb835, type: 3}
   m_PrefabInstance: {fileID: 2087336864}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2087336868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1628641851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5238b3d1deaad44f29bce3238e7717ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: []
 --- !u!4 &2109720806 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9e2287cceba71c04c87b53bdc30a1d0c, type: 3}
