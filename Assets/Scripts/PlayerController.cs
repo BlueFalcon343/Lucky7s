@@ -24,6 +24,9 @@ public class PlayerController : MonoBehaviour
     private float rotationY;
 
     // referenced gameobjects
+    public GameObject GemRed;
+    public GameObject GemGreen;
+    public GameObject GemBlue;
     public GameObject imageGemRed;
     public GameObject imageGemBlue;
     public GameObject imageGemGreen;
@@ -53,6 +56,11 @@ public class PlayerController : MonoBehaviour
         // sets health & timer
         currentHealth = maxHealth;
         count = maxCount;
+
+        //hides Gem wall Gems
+        GemRed.SetActive(false);
+        GemGreen.SetActive(false);
+        GemBlue.SetActive(false);
 
         // hides UI collectables
         imageGemRed.SetActive(false);
@@ -183,5 +191,21 @@ public class PlayerController : MonoBehaviour
     {
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
         Debug.Log(currentHealth + "/" + maxHealth);
+    }
+
+    // places gems from inventory onto wall
+    public void PlaceGems()
+    {
+        if (isGemBlue == true)
+            GemBlue.SetActive(true);
+            isGemBlue = false;
+
+        if (isGemGreen == true)
+            GemGreen.SetActive(true);
+            isGemGreen = false;
+
+        if (isGemRed == true)
+            GemRed.SetActive(true);
+            isGemRed = false;
     }
 }
