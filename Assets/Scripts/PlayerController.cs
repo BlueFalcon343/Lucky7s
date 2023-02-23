@@ -6,9 +6,9 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     // health variables
-    public int maxHealth = 10;
-    public int health { get { return currentHealth; } }
-    int currentHealth;
+    public int maxSpook = 10;
+    public int spook { get { return currentSpook; } }
+    int currentSpook;
 
     // input variables
     public float moveSpeed = 1f;
@@ -54,7 +54,8 @@ public class PlayerController : MonoBehaviour
         musicSource = GetComponent<AudioSource>();
 
         // sets health & timer
-        currentHealth = maxHealth;
+        currentSpook = 0;
+        UISpookBar.instance.SetValue(currentSpook / (float)maxSpook);
         count = maxCount;
 
         //hides Gem wall Gems
@@ -153,15 +154,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void OnCollisionStay2D(Collision2D other)
-    {
-        // enemy contact
-        if (other.gameObject.CompareTag("Guard")) // SET TAG
-        {
-            // SET CONDITION
-        }
-    }
-
     // toggles the UI collectables
     void ToggleItems()
     {
@@ -187,10 +179,12 @@ public class PlayerController : MonoBehaviour
     }
 
     // controls health changes such as damage and healing
-    public void ChangeHealth(int amount)
+    public void ChangeSpook(int amount)
     {
-        currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
-        Debug.Log(currentHealth + "/" + maxHealth);
+        currentSpook = Mathf.Clamp(currentSpook + amount, 0, maxSpook);
+        Debug.Log(currentSpook + "/" + maxSpook);
+
+        UISpookBar.instance.SetValue(currentSpook / (float)maxSpook);
     }
 
     // places gems from inventory onto wall
