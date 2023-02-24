@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
     public GameObject imageGemGreen;
     public GameObject imageGhostSheet;
     public GameObject camera;
+    public GameObject mask;
 
     // collectables
     public bool isGemRed = false;
@@ -55,7 +56,6 @@ public class PlayerController : MonoBehaviour
 
         // sets health & timer
         currentSpook = 0;
-        UISpookBar.instance.SetValue(currentSpook / (float)maxSpook);
         count = maxCount;
 
         //hides Gem wall Gems
@@ -68,6 +68,7 @@ public class PlayerController : MonoBehaviour
         imageGemBlue.SetActive(false);
         imageGemGreen.SetActive(false);
         imageGhostSheet.SetActive(false);
+        mask.SetActive(false);
     }
 
     void Update()
@@ -183,7 +184,7 @@ public class PlayerController : MonoBehaviour
     {
         currentSpook = Mathf.Clamp(currentSpook + amount, 0, maxSpook);
         Debug.Log(currentSpook + "/" + maxSpook);
-
+        mask.SetActive(true);
         UISpookBar.instance.SetValue(currentSpook / (float)maxSpook);
     }
 
