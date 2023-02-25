@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -95,6 +96,11 @@ public class PlayerController : MonoBehaviour
                 count = maxCount;
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("PauseMenu");
+        }
     }
 
     void FixedUpdate()
@@ -186,6 +192,11 @@ public class PlayerController : MonoBehaviour
         Debug.Log(currentSpook + "/" + maxSpook);
         mask.SetActive(true);
         UISpookBar.instance.SetValue(currentSpook / (float)maxSpook);
+
+        if (currentSpook == 10)
+        {
+            SceneManager.LoadScene("LoseMenu");
+        }
     }
 
     // places gems from inventory onto wall

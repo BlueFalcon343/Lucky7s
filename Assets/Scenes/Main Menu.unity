@@ -181,9 +181,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'GO BACK
-
-'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2293,8 +2291,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 677, y: -66}
-  m_SizeDelta: {x: 71.5904, y: 67.2313}
+  m_AnchoredPosition: {x: 655.21484, y: 347.04236}
+  m_SizeDelta: {x: 115.1608, y: 76.5413}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2070037557
 MonoBehaviour:
