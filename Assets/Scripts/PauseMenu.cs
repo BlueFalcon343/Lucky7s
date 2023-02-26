@@ -10,7 +10,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenuUI;
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("PlayGame") || Input.GetButtonDown("QuitGame"))
         {
             if(GameIsPaused)
             {
@@ -19,6 +19,14 @@ public class PauseMenu : MonoBehaviour
             else
             {
                 Pause();
+            }
+        }
+
+        if(Input.GetButtonDown("QuitGame"))
+        {
+            if(GameIsPaused)
+            {
+                QuitGame();
             }
         }
     }
