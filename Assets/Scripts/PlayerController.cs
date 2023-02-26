@@ -204,19 +204,25 @@ public class PlayerController : MonoBehaviour
     public void PlaceGems()
     {
         if (isGemBlue == true)
+        {
             GemBlue.SetActive(true);
             isGemBlue = false;
             BlueGemWin = true;
+        }
 
         if (isGemGreen == true)
+        {
             GemGreen.SetActive(true);
             isGemGreen = false;
             GreenGemWin = true;
+        }
 
         if (isGemRed == true)
+        {
             GemRed.SetActive(true);
             isGemRed = false;
             RedGemWin = true;
+        }
         
         if (BlueGemWin == true && GreenGemWin == true && RedGemWin == true)
             SceneManager.LoadScene("WinMenu");
