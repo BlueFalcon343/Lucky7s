@@ -84,7 +84,7 @@ public class EnemyController : MonoBehaviour
 
             if (player != null)
             {
-                player.ChangeSpook(1);
+                player.ChangeSpook(2);
             }
             //End of Attack code
 
