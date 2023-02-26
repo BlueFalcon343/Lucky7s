@@ -35,6 +35,11 @@ public class PlayerController : MonoBehaviour
     public GameObject camera;
     public GameObject mask;
 
+    // win bools
+    bool RedGemWin = false;
+    bool BlueGemWin = false;
+    bool GreenGemWin = false;
+
     // collectables
     public bool isGemRed = false;
     public bool isGemBlue = false;
@@ -193,7 +198,7 @@ public class PlayerController : MonoBehaviour
         mask.SetActive(true);
         UISpookBar.instance.SetValue(currentSpook / (float)maxSpook);
 
-        if (currentSpook == 10)
+        if (currentSpook >= 10)
         {
             SceneManager.LoadScene("LoseMenu");
         }
@@ -205,13 +210,19 @@ public class PlayerController : MonoBehaviour
         if (isGemBlue == true)
             GemBlue.SetActive(true);
             isGemBlue = false;
+            BlueGemWin = true;
 
         if (isGemGreen == true)
             GemGreen.SetActive(true);
             isGemGreen = false;
+            GreenGemWin = true;
 
         if (isGemRed == true)
             GemRed.SetActive(true);
             isGemRed = false;
+            RedGemWin = true;
+        
+        if (BlueGemWin == true && GreenGemWin == true && RedGemWin == true)
+            SceneManager.LoadScene("WinMenu");
     }
 }
