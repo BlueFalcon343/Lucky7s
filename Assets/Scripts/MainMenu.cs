@@ -14,9 +14,7 @@ public class MainMenu : MonoBehaviour
    
    void Start()
    {
-      credits.SetActive(false);
-      controls.SetActive(false);
-      mainMenu.SetActive(true);
+ 
    }
    void Update()
    {

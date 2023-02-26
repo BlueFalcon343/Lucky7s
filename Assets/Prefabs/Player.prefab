@@ -198,8 +198,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpook: 10
-  moveSpeed: 5
-  turnSpeed: 0.5
+  moveSpeed: 7.5
+  turnSpeed: 1
   minTurnAngle: -30
   maxTurnAngle: 30
   GemRed: {fileID: 0}
